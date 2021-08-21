@@ -12,6 +12,8 @@ public class Main {
         Seat[] seatS = Seat.makeSeatList(19, "S");
         
         ArrayList<Seat[]> seatGradeList = new ArrayList<Seat[]>();
+        ArrayList<User> subscriberInformationList = new ArrayList<User>();
+        
         seatGradeList.add(seatA);
         seatGradeList.add(seatB);
         seatGradeList.add(seatC);
@@ -19,7 +21,7 @@ public class Main {
         
         Scanner scanner = new Scanner(System.in);
         
-        Menu.reservationSystemRun(scanner, seatGradeList);
+        Menu.reservationSystemRun(scanner, seatGradeList, subscriberInformationList);
       
         
     }

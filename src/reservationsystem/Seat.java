@@ -3,7 +3,8 @@ package reservationsystem;
 public class Seat {
     private int seatNumber;
     private String seatGrade;
-    private String seatSubscriber = null;
+    private boolean isReservation = false;
+    private User seatSubscriber;
     
     public Seat(String seatGrade, int seatNumber) {
         this.seatGrade = seatGrade;
@@ -30,11 +31,16 @@ public class Seat {
         return seatGrade;
     }
     
-    public String getSeatSubscriber(){
-        return seatSubscriber;
+    public boolean getIsReservation() {
+        return isReservation;
     }
     
-    public void setSeatSubscriber(String seatSubscriber) {
-        this.seatSubscriber = seatSubscriber;
+    public void setSeatSubscriber(String userName, int seatGradeIndex, String seatGrade, int seatNumber) {
+        seatSubscriber = new User(userName, seatGradeIndex, seatGrade, seatNumber);
+        isReservation = true;
+    }
+    
+    public User getSeatSubscriber() {
+        return seatSubscriber;
     }
 }
